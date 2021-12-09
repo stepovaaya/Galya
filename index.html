@@ -8,6 +8,7 @@
   <title>Lagoona</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/favicon.svg">
 </head>
 
 <body>
@@ -18,7 +19,12 @@
           <img src="img/logo-header.svg" alt="logo" class="logo-img">
         </a>
         <a href="tel:+7493225448" class="header-phone">+7 495 322 54 48 </a>
-        <a href="#" class="link-account">Личный кабинет</a>
+        <a href="#" class="link-account flex">
+          <svg class="logo-header-svg"  width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11.59 7.41L15.17 11H1V13H15.17L11.58 16.59L13 18L19 12L13 6L11.59 7.41ZM20 6V18H22V6H20Z" fill="#CC9933"/>
+           </svg>
+         <span class="account-text">Личный кабинет</span>
+        </a>
       </div>
       <div class="navigation flex">
         <nav class="header-nav">
@@ -374,7 +380,7 @@
               </li>
               <li class="form-elements list-reset">
                 <label class="text-form"> Ночей
-                  <input class="forms line" type="numder" max="20" name="night">
+                  <input class="forms line" type="number" max="20" name="night">
                 </label>
               </li>
               <li class="form-elements list-reset">
@@ -410,11 +416,11 @@
               <li class="contacts-link list-reset">
                 <strong class="contacts-header">E-mail</strong>
                 <div class="contacts-block-email">
-                  <a href="mailto:lg.oona@mail.ru" class="contacts-email">
+                  <a href="mailto:lg.oona@mail.ru" class="contacts-email hover">
                   lg.oona@mail.ru
                 </a>
                   <p class="email-text">по вопросам бронирования</p>
-                  <a href="mailto:hotels.ln@mail.ru" class="contacts-email">
+                  <a href="mailto:hotels.ln@mail.ru" class="contacts-email hover">
                   hotels.ln@mail.ru
                 </a>
                   <p class="email-text">по вопросам сотрудничества</p>
@@ -437,17 +443,17 @@
       <div class="first-footer flex">
         <p class="footer-text">&copy;&nbsp;2012-2020 Управляющая компания Объединенной сети &laquo;Лагуна Хотелс&raquo;</p>
         <p class="footer-text">Представленная на&nbsp;сайте информация носит справочный характер и&nbsp;не&nbsp;является публичной офертой</p>
-        <a href="#" class="footer-link">Пользовательское соглашение</a>
+        <a href="#" class="footer-link hover">Пользовательское соглашение</a>
       </div>
       <div class="second-footer flex">
         <p class="footer-text footer-address">11710, улица Юности, дом 5 строение 4, офис 2</p>
         <div class="phone">
-          <a href="tel:+74995356434" class="footer-phone">+7 (499) 535-64-34 </a>
-          <a href="tel:+74995353454" class="footer-phone">+7 (499) 535-34-54 </a>
+          <a href="tel:+74995356434" class="footer-phone hover">+7 (499) 535-64-34 </a>
+          <a href="tel:+74995353454" class="footer-phone hover">+7 (499) 535-34-54 </a>
         </div>
         <div class="email">
-          <a href="mailto:lg.oona@mail.ru" class="footer-email"> lg.oona@mail.ru </a>
-          <a href="mailto:hotels.ln@mail.ru" class="footer-email">hotels.ln@mail.ru </a>
+          <a href="mailto:lg.oona@mail.ru" class="footer-email hover"> lg.oona@mail.ru </a>
+          <a href="mailto:hotels.ln@mail.ru" class="footer-email hover">hotels.ln@mail.ru </a>
         </div>
       </div>
       <div class="third-footer flex">
