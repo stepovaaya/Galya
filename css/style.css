@@ -74,7 +74,7 @@ body {
   margin-left: 50px;
   font-size: 40px;
   line-height: 40px;
-  color: #333333;
+  color: var(--color-dark);
   font-weight: normal;
 }
 
@@ -84,7 +84,16 @@ body {
   cursor: pointer;
 }*/
 
+:root {
+  --color-dark: #333;
+  --color-gold: #CC9933;
+  --color-white: #fff;
+  --color-grey: #c4c4c4;
+  --color-dark-gold:#A47312;
+  --color-light-gold:#E9c478;
+  --color-light-gray:#E1E1E1;
 
+}
 
 /*header*/
 
@@ -106,7 +115,6 @@ body {
   font-size: 20px;
   line-height: 20px;
   color: rgba(102, 102, 102, 1);
-
 }
 
 .logo-img {
@@ -115,30 +123,83 @@ body {
 
 .link-account {
   margin-left: auto;
-  color: #CC9933;
-  padding-left: 29px;
-  background-image: url(../img/keyboard_tab.svg);
-  background-repeat: no-repeat;
-  background-position: left;
-  background-size: auto;
-
+  color: var(--color-gold);
+  transition: color .3ms ease;
+  align-items: center;
 }
+
+.link-account:hover {
+  color: var(--color-light-gold);
+}
+
+.account-text {
+  padding-left: 5px;
+}
+
+
+.logo-header-svg {
+  transition: fill .3s linear;
+}
+
+.link-account:hover .logo-header-svg path {
+  fill: var(--color-light-gold);
+}
+
+.link-account:focus .logo-header-svg path {
+  fill: var(--color-gold);
+}
+
+.link-account:active .logo-header-svg path {
+  fill: var(--color-dark-gold);
+}
+
 
 .navigation {
   margin-top: 30px;
   align-items: center;
   padding: 10px 45px;
-  background-color: #FFFFFF;
+  background-color: var(--color-white);
   border-radius: 15px;
 }
 
 .header-list {
-  padding-right: 56px;
   padding: 17px 56px 17px 0; /*я высчитала сколько должны будут паддинги, чтобы правй бордер стал в размер, но наверное так не должно быть*/
   color: #666666;
   font-size: 16px;
   line-height: 16px;
-  border-right: 1px solid #E1E1E1;
+  border-right: 1px solid var(--color-light-gray);
+
+}
+
+.link-account,
+.header-phone,
+.contacts-phone,
+.header-link {
+  transition-property: border-color, color;
+  transition-duration: .3s;
+  transition-timing-function: ease;
+}
+
+.link-account:focus,
+.header-phone:focus,
+.contacts-phone:focus,
+.header-link:focus {
+  color: var(--color-gold);
+  outline: solid 1px;
+  outline-offset: 5px;
+}
+
+.header-phone:hover,
+.contacts-phone:hover,
+.header-link:hover {
+  color: var(--color-gold);
+}
+
+.link-account:active,
+.header-phone:active,
+.contacts-phone:active,
+.header-link:active {
+  color: var(--color-dark-gold);
 }
 
 .header-list-item:not(:last-child) {
@@ -151,21 +212,36 @@ body {
 
 }
 
+
 .btn {
   padding: 13px 20px;
-  border:1px solid #CC9933;
+  border:1px solid var(--color-gold);
   border-radius: 10px;
-  color: #CC9933;
+  color: var(--color-gold);
   background-color: transparent;
   cursor: pointer;
   font-size: 16px;
   line-height: 1;
+  transition-property: background-color, color, border-color;
+  transition-duration: .3s;
+  transition-timing-function: ease;
 }
 
 .btn-nav:not(:last-child) {
   margin-right: 40px;
 }
 
+.btn:focus,
+.btn:hover {
+  color: var(--color-white);
+  background-color: var(--color-gold);
+}
+
+.btn:active {
+  background-color: var(--color-dark-gold);
+  color: var(--color-white);
+  outline: hidden;
+}
 /*offers*/
 
 .offers-item {
@@ -195,11 +271,13 @@ body {
 }
 
 .offers-child:nth-child(1)  {
-  background-image: url(../img/maldivs.jpg);
+  background-image: linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url(../img/maldivs.jpg);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .offers-child:nth-child(2) {
-  background-image: url(../img/hottour.jpg);
+  background-image: linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url(../img/hottour.jpg);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 
@@ -220,11 +298,16 @@ body {
   line-height: 1;
 }
 
+.more-lagoona:active {
+  color: var(--color-white);
+}
+
 .offers-right {
   min-height: 540px;
   justify-content: center;
   padding: 40px;
-  background-image: url(../img/luxroom.jpg);
+  background-image: linear-gradient(90deg, rgba(48, 64, 89, 0.84) -2.9%, rgba(53, 65, 83, 0) 65.7%), url(../img/luxroom.jpg);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   background-repeat:no-repeat;
   background-size: cover;
   border-radius: 15px;
@@ -238,7 +321,7 @@ body {
   font-size: 40px;
   font-style: normal;
   line-height: 40px;
-  color: #FFFFFF;
+  color: var(--color-white);
 }
 
 .big-headline {
@@ -253,13 +336,13 @@ body {
   margin-bottom: 47px;
   font-size: 20px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: var(--color-white);
 }
 
 .offers-descr-big {
   margin-top: 15px;
   margin-bottom: 47px;
-  color: #FFFFFF;
+  color: var(--color-white);
   font-size: 30px;
   line-height: 30px;
 }
@@ -271,6 +354,7 @@ body {
   max-width: 888px;
   font-size: 16px;
   line-height: 200%;
+  color: var(--color-dark);
 }
 
 /*services*/
@@ -286,22 +370,31 @@ body {
   padding-top: 191px;
   padding-left: 45px;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: var(--color-white);
   width: 573px;
   min-height: 330px;
   background-repeat:no-repeat;
+  transition-property: color;
+  transition-duration: .3s;
+  transition-timing-function: ease;
 }
 
-.more-services {
-  padding-right: 13px;
-  color: #CC9933;
-  align-items: flex-start;
-  background-image: url(../img/Rectangle3.svg);
-  background-repeat: no-repeat;
-  background-position: right;
-  font-size: 20px;
-  line-height: 200%;
+.services-link:focus {
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
+
+.services-link:hover {
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.services-link:active {
+  color: var(--color-dark-gold);
+  cursor: pointer;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 
 .services-link:nth-child(1) {
   background-image: url(../img/10.jpg);
@@ -319,6 +412,33 @@ body {
   background-image: url(../img/13.jpg);
 }
 
+.more-services {
+  padding-right: 13px;
+  color: var(--color-gold);
+  align-items: flex-start;
+  background-image: url(../img/Rectangle3.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  font-size: 20px;
+  line-height: 200%;
+}
+
+.more-services:hover {
+  color: var(--color-light-gold);
+}
+
+.services-link:hover .more-services svg{
+  fill: var(--color-light-gold);
+}
+
+.more-services:active {
+  color: var(--color-dark-gold);
+}
+
+.services-link:active .more-services svg{
+  fill: var(--color-dark-gold);
+}
+
 .services-desr {
   margin-top: 191px;
   margin-left: 45px;
@@ -331,6 +451,7 @@ body {
   width: 402px;
   font-size: 16px;
   line-height: 200%;
+  color: #000;
 
 }
 
@@ -347,6 +468,7 @@ body {
   margin-top: 30px;
   flex-wrap: wrap;
   gap: 23px;
+  color: #000;
 }
 
 .advantages-article {
@@ -355,7 +477,7 @@ body {
   width: 275px;
   min-height: 275px;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: var(--color-white);
   background-position: 45px 40px;
   background-repeat: no-repeat;
 }
@@ -401,6 +523,7 @@ body {
   max-width: 188px;
 }
 
+
 /*placement*/
 
 .placement-item {
@@ -414,7 +537,7 @@ body {
   min-height: 440px;
   font-size: 0;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .placement-det {
@@ -424,6 +547,7 @@ body {
   align-items: flex-end;
   background-image: url(../img/41.png);
   background-repeat: round;
+  position: relative;
 
 }
 
@@ -436,10 +560,19 @@ body {
   font-weight: 500;
   font-size: 20px;
   line-height: 200%;
-  color: #FFFFFF;
+  color: var(--color-white);
   background-image:url(../img/Rectangle_end.svg);
   background-repeat: no-repeat;
   background-position: right;
+}
+
+.placement-link-det::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .placement-text {
@@ -459,6 +592,7 @@ body {
   font-weight: normal;
   font-size: 16px;
   line-height: 16px;
+  color: #000;
 }
 
 .placement-ru {
@@ -480,6 +614,7 @@ body {
   padding: 0;
   padding-right: 2px;
   margin: 0;
+  color: #000;
   font-size: 18px;
   font-weight: bold;
   line-height: 16px;
@@ -489,9 +624,11 @@ body {
 .nigth-price {
   padding: 0;
   margin: 0;
+  color: #000;
   font-size: 16px;
   line-height: 16px;
 }
+
 
 /*want tour*/
 
@@ -506,7 +643,7 @@ body {
   margin-bottom: 19px;
   font-size: 40px;
   line-height: 40px;
-  color: #333333;
+  color: var(--color-dark);
   font-weight: normal;
 }
 
@@ -530,7 +667,7 @@ body {
 
 .form-conteiner {
   padding: 10px 18px;
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 15px;
 }
 
@@ -553,13 +690,13 @@ body {
 }
 
 input, select {
-
   border: none;
 }
 
 .line {
   border-bottom: 1px solid #CCCCCC;
 }
+
 /* Contacts */
 
 .contacts-block {
@@ -568,21 +705,19 @@ input, select {
   margin-bottom: 20px;
   width: 1168px;
   min-height: 618px;
-  background-color: #FFFFFF;
+  background-color: var(--color-white);
   border-radius: 15px;
   gap: 50px;
 }
 
 .contacts-link {
-
   padding-top: 25px;
   width: 375px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #C4C4C4;
+  border-bottom: 1px solid var(--color-light-gray);
   padding-bottom: 23px;
 }
-
 
 .contacts-item {
   padding: 0;
@@ -600,7 +735,6 @@ input, select {
   font-size: 20px;
   line-height: 20px;
 }
-
 
 .contacts-text {
   width: 215px;
@@ -621,14 +755,25 @@ input, select {
   align-items: flex-start;
   font-size: 16px;
   line-height: 150%;
-  color: #CC9933;
-
+  color: var(--color-gold);
 }
 
 .contacts-email {
   font-size: 16px;
   line-height: 150%;
-  color: #CC9933;
+  color: var(--color-gold);
+}
+
+.hover:focus {
+  outline:1px solid var(--color-gold);
+}
+
+.hover:hover {
+  color: var(--color-light-gold);
+}
+
+.hover:active {
+  color: var(--color-dark-gold);
 }
 
 .email-text {
@@ -655,7 +800,7 @@ input, select {
   min-height: 341px;
   width: 1168px;
   padding: 45px 51px;
-  background-color: #333333;
+  background-color: var(--color-dark);
   border-radius: 15px;
   background-image: url(../img/lagoona-footer.svg);
   background-repeat: no-repeat;
@@ -675,7 +820,7 @@ input, select {
   margin-bottom: 49px;
   font-size: 16px;
   line-height: 190%;
-  color: #FFFFFF;
+  color: var(--color-white);
 }
 
 .footer-address {
@@ -685,19 +830,22 @@ input, select {
 .footer-link {
   font-size: 16px;
   line-height: 150%;
-  color: #CC9933;
+  color: var(--color-gold);
 }
 
 .footer-phone {
   font-size: 16px;
   line-height: 150%;
-  color: #CC9933;
+  color: var(--color-gold);
+  transition-property: border-color, color;
+  transition-duration: .3s;
+  transition-timing-function: ease;
 }
 
 .footer-email {
   font-size: 16px;
   line-height: 150%;
-  color: #CC9933;
+  color: var(--color-gold);
 }
 
 .second-footer {
@@ -731,10 +879,6 @@ input, select {
   margin-bottom: 20px;
 }
 
-.image-footer::before {
-  content: '';
-  display: block;
-}
 
 .image-footer {
   width: 254px;
@@ -743,5 +887,19 @@ input, select {
   top: 113px;
   background-image: url(../img/lagoona-footer.svg);
   background-repeat: no-repeat;
+  transition: fill;
 }
+
+.container-footer:hover .footer-icon:hover path {
+  fill: var(--color-gold);
+}
+
+.container-footer:hover .footer-icon:hover path {
+  fill: var(--color-grey);
+}
+
+.container-footer:hover .footer-icon:active path {
+  fill: var(--color-dark-gold);
+}
+
 
